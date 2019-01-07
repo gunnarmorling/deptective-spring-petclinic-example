@@ -207,6 +207,44 @@
           </dependency>
         </dependencies>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <fork>false</fork>
+          <showWarnings>true</showWarnings>
+          <compilerArgs>
+            <arg>-Xplugin:Deptective</arg>
+            <arg>-Xmaxerrs</arg>
+            <arg>1000</arg>
+
+            <!-- Uncomment for creating a template of the dependency descriptor
+                 based on the actual deps -->
+            <!-- <arg>-Adeptective.mode=ANALYZE</arg> -->
+            <!-- <arg>-Adeptective.whitelisted=*ALL_EXTERNAL*</arg> -->
+
+            <arg>-Adeptective.mode=VALIDATE</arg>
+            <arg>-Adeptective.reporting_policy=ERROR</arg>
+            <arg>-Adeptective.visualize=true</arg>
+          </compilerArgs>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>com.github.moditect.deptective</groupId>
+              <artifactId>deptective-javac-plugin</artifactId>
+              <version>master-SNAPSHOT</version>
+            </path>
+
+            <!-- Use this for a locally built Deptective JAR -->
+            <!--
+            <path>
+                <groupId>org.moditect.deptective</groupId>
+                <artifactId>deptective-javac-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </path>
+             -->
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
@@ -235,6 +273,11 @@
         <enabled>false</enabled>
       </snapshots>
     </repository>
+      <repository>
+        <id>jitpack</id>
+        <name>Jitpack</name>
+        <url>https://jitpack.io</url>
+      </repository>
   </repositories>
 
   <pluginRepositories>

@@ -1,4 +1,22 @@
-# Spring PetClinic Sample Application [![Build Status](https://travis-ci.org/spring-projects/spring-petclinic.png?branch=master)](https://travis-ci.org/spring-projects/spring-petclinic/)
+# Deptective Example: Spring PetClinic Sample Application [![Build Status](https://travis-ci.org/spring-projects/spring-petclinic.png?branch=master)](https://travis-ci.org/spring-projects/spring-petclinic/)
+
+This is a fork of the [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) example app,
+which has been adapted to demonstrate the validation of package dependencies at compile time via [Deptective](https://github.com/moditect/deptective).
+
+The project's architecture (as manifested through intended package relationships) is described in the [META-INF/deptective.json](src/main/resources/META-INF/deptective.json) file.
+The Deptective plug-in for _javac_ is [configured in pom.xml](pom.xml#L210-L247).
+As an example, an unwanted relationship from the `model` to the `visit` package has been added.
+This will be detected by Deptective, causing compilation of the project to fail when running `mvn clean install`.
+In addition, a GraphViz (DOT) file is generated under _target/classes/deptective.dot_,
+which visualizes intended and actual package relationships.
+If you have GraphViz installed, you can convert the DOT file into PNG by running `dot -Tpng target/classes/deptective.dot > petclinic.png`.
+It will look like so:
+
+![GraphViz representation of package relationships](petclinic.png)
+
+See the [README file](https://github.com/moditect/deptective/blob/master/README.md) of the Deptective project for more information.
+
+The remainder of this file is the README from the upstream PetClinic project.
 
 ## Understanding the Spring Petclinic application with a few diagrams
 <a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
@@ -46,7 +64,7 @@ docker run -e MYSQL_ROOT_PASSWORD=petclinic -e MYSQL_DATABASE=petclinic -p 3306:
 The following items should be installed in your system:
 * Java 8 or newer.
 * git command line tool (https://help.github.com/articles/set-up-git)
-* Your prefered IDE 
+* Your prefered IDE
   * Eclipse with the m2e plugin. Note: when m2e is available, there is an m2 icon in Help -> About dialog. If m2e is not there, just follow the install process here: http://www.eclipse.org/m2e/
   * [Spring Tools Suite](https://spring.io/tools) (STS)
   * IntelliJ IDEA
@@ -121,7 +139,7 @@ The Spring PetClinic sample application is released under version 2.0 of the [Ap
 
 [spring-petclinic]: https://github.com/spring-projects/spring-petclinic
 [spring-framework-petclinic]: https://github.com/spring-petclinic/spring-framework-petclinic
-[spring-petclinic-angularjs]: https://github.com/spring-petclinic/spring-petclinic-angularjs 
+[spring-petclinic-angularjs]: https://github.com/spring-petclinic/spring-petclinic-angularjs
 [javaconfig branch]: https://github.com/spring-petclinic/spring-framework-petclinic/tree/javaconfig
 [spring-petclinic-angular]: https://github.com/spring-petclinic/spring-petclinic-angular
 [spring-petclinic-microservices]: https://github.com/spring-petclinic/spring-petclinic-microservices

@@ -1,0 +1,66 @@
+{
+    "packages": [
+        {
+            "name": "org.springframework.samples.petclinic"
+        },
+        {
+            "name": "org.springframework.samples.petclinic.model"
+        },
+        {
+            "name": "org.springframework.samples.petclinic.owner",
+            "reads": [
+                "org.springframework.samples.petclinic.model",
+                "org.springframework.samples.petclinic.visit"
+            ]
+        },
+        {
+            "name": "org.springframework.samples.petclinic.system"
+        },
+        {
+            "name": "org.springframework.samples.petclinic.vet",
+            "reads": [
+                "org.springframework.samples.petclinic.model"
+            ]
+        },
+        {
+            "name": "org.springframework.samples.petclinic.visit",
+            "reads": [
+                "org.springframework.samples.petclinic.model"
+            ]
+        }
+    ],
+    "whitelisted": [
+        "java.io",
+        "java.text",
+        "java.time",
+        "java.util",
+        "javax.cache",
+        "javax.cache.configuration",
+        "javax.persistence",
+        "javax.validation",
+        "javax.validation.constraints",
+        "javax.xml.bind.annotation",
+        "org.springframework.beans.factory.annotation",
+        "org.springframework.beans.support",
+        "org.springframework.boot",
+        "org.springframework.boot.autoconfigure",
+        "org.springframework.boot.autoconfigure.cache",
+        "org.springframework.cache.annotation",
+        "org.springframework.context.annotation",
+        "org.springframework.core.style",
+        "org.springframework.dao",
+        "org.springframework.data.jpa.repository",
+        "org.springframework.data.repository",
+        "org.springframework.data.repository.query",
+        "org.springframework.format",
+        "org.springframework.format.annotation",
+        "org.springframework.stereotype",
+        "org.springframework.transaction.annotation",
+        "org.springframework.ui",
+        "org.springframework.util",
+        "org.springframework.validation",
+        "org.springframework.web.bind",
+        "org.springframework.web.bind.annotation",
+        "org.springframework.web.servlet"
+    ]
+}
