@@ -1,29 +1,47 @@
 {
-    "packages": [
+    "components": [
         {
-            "name": "org.springframework.samples.petclinic"
+            "name": "org.springframework.samples.petclinic",
+            "contains": [
+                "org.springframework.samples.petclinic"
+            ]
         },
         {
-            "name": "org.springframework.samples.petclinic.model"
+            "name": "org.springframework.samples.petclinic.model",
+            "contains": [
+                "org.springframework.samples.petclinic.model"
+            ]
         },
         {
             "name": "org.springframework.samples.petclinic.owner",
+            "contains": [
+                "org.springframework.samples.petclinic.owner"
+            ],
             "reads": [
                 "org.springframework.samples.petclinic.model",
                 "org.springframework.samples.petclinic.visit"
             ]
         },
         {
-            "name": "org.springframework.samples.petclinic.system"
+            "name": "org.springframework.samples.petclinic.system",
+            "contains": [
+                "org.springframework.samples.petclinic.system"
+            ]
         },
         {
             "name": "org.springframework.samples.petclinic.vet",
+            "contains": [
+                "org.springframework.samples.petclinic.vet"
+            ],
             "reads": [
                 "org.springframework.samples.petclinic.model"
             ]
         },
         {
             "name": "org.springframework.samples.petclinic.visit",
+            "contains": [
+                "org.springframework.samples.petclinic.visit"
+            ],
             "reads": [
                 "org.springframework.samples.petclinic.model"
             ]

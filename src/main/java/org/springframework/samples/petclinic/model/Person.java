@@ -19,8 +19,6 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotEmpty;
 
-import org.springframework.samples.petclinic.visit.VisitRepository;
-
 /**
  * Simple JavaBean domain object representing an person.
  *
@@ -29,10 +27,10 @@ import org.springframework.samples.petclinic.visit.VisitRepository;
 @MappedSuperclass
 public class Person extends BaseEntity {
 
-    /**
-     * Unwanted reference to the "visit" package; this will make Deptective fail the compilation
-     */
-    private VisitRepository vr;
+//    /**
+//     * Unwanted reference to the "visit" package; this will make Deptective fail the compilation
+//     */
+//    private VisitRepository vr;
 
     @Column(name = "first_name")
     @NotEmpty

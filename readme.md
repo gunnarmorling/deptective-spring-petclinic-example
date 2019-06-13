@@ -9,7 +9,7 @@ As an example, an unwanted relationship from the `model` to the `visit` package 
 This will be detected by Deptective, causing compilation of the project to fail when running `mvn clean install`.
 In addition, a GraphViz (DOT) file is generated under _target/classes/deptective.dot_,
 which visualizes intended and actual package relationships.
-If you have GraphViz installed, you can convert the DOT file into PNG by running `dot -Tpng target/classes/deptective.dot > petclinic.png`.
+If you have GraphViz installed, you can convert the DOT file into PNG by running `dot -Tpng target/generated-sources/annotations/deptective.dot > petclinic.png`.
 It will look like so:
 
 ![GraphViz representation of package relationships](petclinic.png)
